@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeBel | Muy pronto</title>
+<meta name="description" content="GeBel: cocina exclusiva por delivery, hecha por Belén y Gerardo. El lanzamiento está en camino.">
+
+<!-- Favicon (SVG inline, llama dorada) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23170b07'/%3E%3Cpath d='M50 15c8 15-10 20-10 35a16 16 0 0032 0c0-10-6-14-6-22 8 6 14 16 14 28a26 26 0 01-52 0C28 38 42 30 50 15z' fill='%23e8672a'/%3E%3Cpath d='M50 40c4 8-4 10-4 17a8 8 0 0016 0c0-5-3-7-3-11 4 3 7 8 7 14a12 12 0 01-24 0c0-10 5-14 8-20z' fill='%23f0cf8a'/%3E%3C/svg%3E">
+
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="GeBel | Muy pronto">
+<meta property="og:description" content="Cocina exclusiva por delivery. El local y las sorpresas están en camino. ¡Enterate primero por WhatsApp!">
+<meta property="og:image" content="https://TU-DOMINIO.com/og-image.jpg">
+<meta property="og:url" content="https://TU-DOMINIO.com">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GeBel | Muy pronto">
+<meta name="twitter:description" content="Cocina exclusiva por delivery, hecha por Belén y Gerardo.">
+<meta name="twitter:image" content="https://TU-DOMINIO.com/og-image.jpg">
+
+<meta name="theme-color" content="#170b07">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- JSON-LD: datos estructurados para buscadores -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "GeBel",
+  "description": "Delivery de cocina exclusiva creado por Belén y Gerardo.",
+  "servesCuisine": "Cocina de autor",
+  "priceRange": "$$",
+  "telephone": "+549XXXXXXXXXX",
+  "image": "https://TU-DOMINIO.com/og-image.jpg",
+  "url": "https://TU-DOMINIO.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "TU-CIUDAD",
+    "addressRegion": "TU-PROVINCIA",
+    "addressCountry": "AR"
+  },
+  "sameAs": [
+    "https://www.instagram.com/gebel.delivery",
+    "https://www.facebook.com/gebel.delivery",
+    "https://www.tiktok.com/@gebel.delivery"
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#170b07; --bg2:#26130a; --gold:#d9a548; --gold-soft:#f0cf8a;
+  --ember:#e8672a; --red:#c8321f; --text:#f6ead9; --muted:#bba58e;
+  --line:rgba(217,165,72,.28); --whatsapp:#25D366;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  min-height:100vh;min-height:100svh;background:var(--bg);color:var(--text);
+  font-family:var(--sans);line-height:1.6;overflow-x:hidden;
+  background-image:
+    radial-gradient(900px 520px at 50% 108%,rgba(232,103,42,.28),transparent 70%),
+    radial-gradient(700px 420px at 12% -10%,rgba(200,50,31,.16),transparent 70%);
+  background-attachment:fixed;
+}
+body.loading{overflow:hidden}
+:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px}
+a{color:inherit;text-decoration:none}
+
+#embers{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+#embers span{
+  position:absolute;bottom:-12px;width:var(--s);height:var(--s);border-radius:50%;
+  background:var(--ember);box-shadow:0 0 10px 2px rgba(232,103,42,.7);opacity:0;
+  animation:rise var(--d) linear var(--delay) infinite;
+}
+@keyframes rise{
+  0%{transform:translate(0,0);opacity:0}
+  12%{opacity:.8}
+  100%{transform:translate(var(--x),-105vh);opacity:0}
+}
+
+#loader{
+  position:fixed;inset:0;z-index:50;display:grid;place-items:center;
+  background:var(--bg);background-image:radial-gradient(520px 520px at 50% 50%,rgba(232,103,42,.18),transparent 70%);
+  transition:opacity .9s ease,visibility .9s;
+}
+#loader.out{opacity:0;visibility:hidden}
+.load-box{text-align:center;padding:24px}
+.ring{position:relative;width:min(240px,64vw);aspect-ratio:1;margin:0 auto 28px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+.ring .track{fill:none;stroke:rgba(217,165,72,.14);stroke-width:2}
+.ring .bar{fill:none;stroke:url(#g);stroke-width:3;stroke-linecap:round;
+  stroke-dasharray:326.7;stroke-dashoffset:326.7;filter:drop-shadow(0 0 6px rgba(232,103,42,.7))}
+.ring .mono{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,11vw,3.2rem);
+  letter-spacing:.14em;padding-left:.14em;color:var(--gold-soft);
+}
+.pct{font-family:var(--serif);font-size:1.9rem;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+.stage{color:var(--muted);font-size:.92rem;margin-top:4px;min-height:1.5em}
+
+main{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:clamp(28px,6vw,56px) 22px 40px;
+  display:flex;flex-direction:column;align-items:center;text-align:center}
+.reveal{opacity:0;transform:translateY(18px)}
+body.ready .reveal{animation:in .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*.14s)}
+@keyframes in{to{opacity:1;transform:none}}
+
+.brand{display:flex;align-items:center;gap:14px;margin-bottom:clamp(30px,6vw,52px)}
+.badge{
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  border:1.5px solid var(--gold);color:var(--gold-soft);
+  font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.1em;padding-left:.1em;
+  box-shadow:0 0 0 5px rgba(217,165,72,.08),inset 0 0 14px rgba(217,165,72,.15);
+}
+.wordmark{font-family:var(--serif);font-size:2.3rem;font-weight:600;letter-spacing:.02em;line-height:1}
+
+h1{
+  font-family:var(--serif);font-weight:600;line-height:1.02;letter-spacing:-.01em;
+  font-size:clamp(2.7rem,9.5vw,5.4rem);max-width:13ch;
+  background:linear-gradient(180deg,#fff3dc 10%,var(--gold) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lead{max-width:56ch;margin-top:22px;color:var(--muted);font-size:clamp(1rem,2.6vw,1.15rem)}
+.lead strong{color:var(--text);font-weight:600}
+
+/* Teaser visual (placeholder: reemplazar por foto real con <img>) */
+.visual{
+  margin-top:40px;width:min(230px,58vw);aspect-ratio:1;border-radius:50%;
+  display:grid;place-items:center;position:relative;
+  background:radial-gradient(circle at 50% 40%,rgba(232,103,42,.22),transparent 70%);
+  border:1px solid var(--line);
+}
+.visual svg{width:52%;height:52%;filter:blur(.3px) drop-shadow(0 0 18px rgba(232,103,42,.45));opacity:.9}
+.visual::after{
+  content:"foto próximamente";position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);
+  font-size:.72rem;color:var(--muted);letter-spacing:.04em;white-space:nowrap;
+}
+
+.teaser{margin-top:46px;max-width:36ch;position:relative;padding-top:34px}
+.teaser::before{
+  content:"";position:absolute;top:0;left:50%;width:1px;height:22px;transform:translateX(-50%);
+  background:linear-gradient(var(--gold),transparent);
+}
+.teaser p{font-family:var(--serif);font-style:italic;font-weight:500;line-height:1.3}
+.teaser .a{font-size:clamp(1.3rem,4.4vw,1.85rem);color:var(--text)}
+.teaser .b{
+  margin-top:18px;font-size:clamp(1.65rem,5.8vw,2.5rem);color:var(--gold-soft);
+  animation:glow 4.5s ease-in-out infinite;
+}
+@keyframes glow{
+  0%,100%{text-shadow:0 0 18px rgba(232,103,42,.25)}
+  50%{text-shadow:0 0 34px rgba(232,103,42,.6)}
+}
+.info{margin-top:30px;color:var(--muted);font-size:.95rem}
+
+/* Countdown */
+.countdown{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;justify-content:center}
+.countdown .cell{
+  min-width:72px;padding:14px 10px;border-radius:16px;background:rgba(246,234,217,.05);
+  border:1px solid var(--line);
+}
+.countdown .num{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--gold-soft);
+  font-variant-numeric:tabular-nums}
+.countdown .lbl{font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.countdown-label{margin-top:30px;font-size:.95rem;color:var(--muted)}
+
+/* CTA WhatsApp */
+.cta-line{margin-top:36px;font-size:1rem;max-width:40ch}
+.whatsapp-btn{
+  margin-top:16px;display:inline-flex;align-items:center;gap:10px;
+  padding:16px 30px;border-radius:999px;font-weight:700;font-size:1rem;
+  background:linear-gradient(135deg,#2ee37a,var(--whatsapp));color:#0a2615;
+  box-shadow:0 10px 28px rgba(37,211,102,.35);transition:transform .2s,box-shadow .2s;
+}
+.whatsapp-btn:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(37,211,102,.5)}
+.whatsapp-btn svg{width:22px;height:22px;flex:none}
+
+/* Redes sociales */
+.social{display:flex;gap:16px;margin-top:30px}
+.social a{
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line);color:var(--gold-soft);transition:transform .2s,border-color .2s,color .2s;
+}
+.social a:hover{transform:translateY(-3px);border-color:var(--gold);color:var(--gold)}
+.social svg{width:20px;height:20px}
+
+footer{margin-top:44px;color:var(--muted);font-size:.85rem}
+footer b{color:var(--gold);font-weight:600}
+
+@media (max-width:420px){
+  .countdown .cell{min-width:60px;padding:10px 6px}
+  .countdown .num{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  #embers{display:none}
+  .reveal{opacity:1;transform:none}
+  body.ready .reveal,.teaser .b{animation:none}
+  #loader{transition:none}
+}
+</style>
+</head>
+<body class="loading">
+
+<div id="loader" role="status" aria-live="polite">
+  <div class="load-box">
+    <div class="ring">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f0cf8a"/><stop offset=".55" stop-color="#e8672a"/><stop offset="1" stop-color="#c8321f"/>
+          </linearGradient>
+        </defs>
+        <circle class="track" cx="60" cy="60" r="52"/>
+        <circle class="bar" id="bar" cx="60" cy="60" r="52"/>
+      </svg>
+      <div class="mono">BYG</div>
+    </div>
+    <div class="pct" id="pct">0%</div>
+    <div class="stage" id="stage">Encendiendo las hornallas…</div>
+  </div>
+</div>
+
+<div id="embers" aria-hidden="true"></div>
+
+<main>
+  <div class="brand reveal" style="--i:0">
+    <div class="badge" aria-hidden="true">BYG</div>
+    <div class="wordmark">GeBel</div>
+  </div>
+
+  <h1 class="reveal" style="--i:1">La espera va a valer cada bocado.</h1>
+
+  <p class="lead reveal" style="--i:2">
+    Estamos cocinando algo que va a <strong>revolucionar tus juntadas y tus cenas</strong>.
+    Cuando lo pruebes, vas a entender por qué valió la pena esperar.
+  </p>
+
+  <!-- Teaser visual: reemplazar este bloque por <img src="plato.jpg" alt="..."> cuando tengan fotos reales -->
+  <div class="visual reveal" style="--i:3" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="color:#f0cf8a">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M7 4v6M5 4v6M9 4v6M7 10v10M15 4c-1.5 1.3-2 3-2 5s.5 3.7 2 5v6" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="teaser reveal" style="--i:4">
+    <p class="a">El horno ya está encendido y los cuchillos listos, pero por ahora solo viajamos directo a tu puerta (exclusivo delivery).</p>
+    <p class="b">El día que abramos el local... bueno, mejor estate atento.</p>
+  </div>
+
+  <p class="info reveal" style="--i:5">Próximamente estaremos dando más información.</p>
+
+  <!-- Countdown: reemplazar la fecha por la real en el <script> de más abajo -->
+  <p class="countdown-label reveal" style="--i:6">Faltan</p>
+  <div class="countdown reveal" style="--i:6" id="countdown" aria-live="polite">
+    <div class="cell"><div class="num" id="cd-days">00</div><div class="lbl">Días</div></div>
+    <div class="cell"><div class="num" id="cd-hours">00</div><div class="lbl">Horas</div></div>
+    <div class="cell"><div class="num" id="cd-min">00</div><div class="lbl">Min</div></div>
+    <div class="cell"><div class="num" id="cd-sec">00</div><div class="lbl">Seg</div></div>
+  </div>
+
+  <!-- CTA WhatsApp: reemplazar el número por el real (formato 549 + código de área + número, sin espacios) -->
+  <p class="cta-line reveal" style="--i:7">Escribinos por WhatsApp y te avisamos primero, antes que nadie.</p>
+  <a class="whatsapp-btn reveal" style="--i:7"
+     href="https://wa.me/5491122334455?text=Hola%20GeBel%2C%20quiero%20que%20me%20avisen%20cuando%20lancen%20%F0%9F%94%A5"
+     target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.004 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.627.73 5.08 2 7.173L2.667 29.333l6.347-1.973A13.26 13.26 0 0016.004 29.333c7.364 0 13.333-5.973 13.333-13.333S23.368 2.667 16.004 2.667zm0 24.267c-2.267 0-4.373-.667-6.16-1.813l-.44-.267-3.76 1.173 1.187-3.653-.287-.453a10.84 10.84 0 01-1.69-5.92c0-6.027 4.907-10.933 10.933-10.933 2.92 0 5.667 1.133 7.733 3.2a10.86 10.86 0 013.2 7.733c.014 6.027-4.893 10.933-10.92 10.933zm5.973-8.173c-.32-.16-1.92-.947-2.213-1.053-.293-.107-.507-.16-.72.16-.213.32-.827 1.053-1.013 1.267-.187.213-.373.24-.693.08-.32-.16-1.333-.493-2.533-1.56-.933-.84-1.56-1.867-1.747-2.187-.187-.32-.02-.493.173-.667.173-.16.387-.413.573-.613.187-.2.253-.347.373-.573.12-.227.067-.413-.027-.573-.093-.16-.84-2.013-1.147-2.76-.307-.747-.613-.64-.84-.653-.213-.013-.467-.013-.72-.013-.253 0-.653.093-1 .467-.347.373-1.333 1.293-1.333 3.147 0 1.854 1.36 3.653 1.547 3.907.187.253 2.573 3.934 6.253 5.361 3.68 1.427 3.68.953 4.347.893.667-.06 2.173-.893 2.48-1.76.307-.867.307-1.613.213-1.76-.093-.147-.32-.233-.653-.4z"/></svg>
+    Avisarme por WhatsApp
+  </a>
+
+  <!-- Redes sociales: reemplazar los href por los links reales -->
+  <div class="social reveal" style="--i:8" aria-label="Redes sociales de GeBel">
+    <a href="https://www.instagram.com/gebel.delivery" target="_blank" rel="noopener" aria-label="Instagram de GeBel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+    </a>
+    <a href="https://www.facebook.com/gebel.delivery" target="_blank" rel="noopener" aria-label="Facebook de GeBel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 8h-2a2 2 0 00-2 2v2H9v3h2v6h3v-6h2.2l.8-3H14v-1.5c0-.5.3-1 1-1h1.5z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@gebel.delivery" target="_blank" rel="noopener" aria-label="TikTok de GeBel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v9.5a3.5 3.5 0 11-3.5-3.5"/><path d="M14 4c0 2.5 2 4.5 4.5 4.5"/></svg>
+    </a>
+  </div>
+
+  <footer class="reveal" style="--i:9">Hecho con fuego lento por <b>Belén y Gerardo</b></footer>
+</main>
+
+<script>
+(function(){
+  var box=document.getElementById('embers');
+  for(var i=0;i<18;i++){
+    var e=document.createElement('span');
+    e.style.cssText='left:'+(Math.random()*100)+'%;--s:'+(2+Math.random()*4)+'px;--d:'+(9+Math.random()*10)+'s;--delay:-'+(Math.random()*14)+'s;--x:'+((Math.random()*120)-60)+'px';
+    box.appendChild(e);
+  }
+})();
+
+(function(){
+  var bar=document.getElementById('bar'),pct=document.getElementById('pct'),
+      stage=document.getElementById('stage'),loader=document.getElementById('loader'),
+      C=326.7,DUR=matchMedia('(prefers-reduced-motion:reduce)').matches?300:3600,t0=null,
+      msgs=[[0,'Encendiendo las hornallas…'],[35,'Afilando los cuchillos…'],[65,'Probando la sazón…'],[90,'Poniendo la mesa…']];
+  function ease(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2}
+  function step(t){
+    if(!t0)t0=t;
+    var p=Math.min((t-t0)/DUR,1),v=Math.round(ease(p)*100);
+    bar.style.strokeDashoffset=C*(1-ease(p));
+    pct.textContent=v+'%';
+    for(var i=0;i<msgs.length;i++){if(v>=msgs[i][0])stage.textContent=msgs[i][1]}
+    if(p<1){requestAnimationFrame(step)}else{stage.textContent='¡Listo!';setTimeout(finish,450)}
+  }
+  function finish(){
+    loader.classList.add('out');
+    document.body.classList.remove('loading');
+    document.body.classList.add('ready');
+  }
+  requestAnimationFrame(step);
+})();
+
+/* Countdown real: reemplazar la fecha/hora por la del lanzamiento */
+(function(){
+  var TARGET=new Date('2026-11-15T00:00:00-03:00').getTime();
+  var d=document.getElementById('cd-days'),h=document.getElementById('cd-hours'),
+      m=document.getElementById('cd-min'),s=document.getElementById('cd-sec');
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){
+    var diff=TARGET-Date.now();
+    if(diff<=0){d.textContent=h.textContent=m.textContent=s.textContent='00';return}
+    var days=Math.floor(diff/864e5),hours=Math.floor(diff%864e5/36e5),
+        mins=Math.floor(diff%36e5/6e4),secs=Math.floor(diff%6e4/1000);
+    d.textContent=pad(days);h.textContent=pad(hours);m.textContent=pad(mins);s.textContent=pad(secs);
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
+
+<!-- Google Analytics 4: reemplazar G-XXXXXXXXXX por tu ID real antes de publicar -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+</body>
+</html>
